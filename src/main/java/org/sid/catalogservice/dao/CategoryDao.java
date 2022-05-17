@@ -1,0 +1,15 @@
+package org.sid.catalogservice.dao;
+
+import org.sid.catalogservice.entities.Category;
+import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.data.rest.core.annotation.RepositoryRestResource;
+import org.springframework.web.bind.annotation.CrossOrigin;
+
+import javax.transaction.Transactional;
+
+@Transactional
+@RepositoryRestResource
+@CrossOrigin(origins = "http://localhost:4200") // permit d'accepter les requests
+public interface CategoryDao extends JpaRepository<Category,Long> {
+    // on peut ajouter les toutes operations qu'on voulait...
+}
